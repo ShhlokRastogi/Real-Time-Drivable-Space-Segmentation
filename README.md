@@ -29,7 +29,7 @@ Below is the graph visualization mapping out the model's combinatorial loss traj
 The stabilized system weights (`drivable_model_effnet_merged.pth`) were extracted and benchmarked algorithmically strictly against `1,052` entirely unseen, un-augmented graphical frames living randomly in the isolated `test/` boundaries of the merged road hub.
 
 | Physical Metric | Recorded Result | 
-| :--- | :--- | :--- | :--- |
+| :--- | :--- |
 | **Hardware Used** | PyTorch CUDA Tensor Cores | 
 | **Total Test Split Loss** | `0.0559` | 
 | **Generalized mIoU** | **`90.17%`** | 
