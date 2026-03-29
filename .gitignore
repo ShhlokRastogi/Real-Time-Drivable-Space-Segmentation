@@ -9,6 +9,7 @@ merged_road_dataset/
 
 # Network Model Checkpoints
 *.pth
+!drivable_model_effnet_merged*.pth
 
 # Heavy Image Render Artifacts
 inference_results/
