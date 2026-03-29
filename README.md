@@ -4,7 +4,7 @@
 
 The objective of this project is to build a mathematically rigorous and highly accurate (targeting `>85% mIoU`) computer vision pipeline capable of detecting general drivable boundaries strictly within a **real-time execution window** (`>60 FPS`) on local consumer hardware.
 
-Real-world driving environments have enormous variance—ranging from completely unlined rural roads to brightly structured highways. To ensure the artificial network generalizes rather than memorizes, we actively compiled **BDD100k, NuScenes, and the India Driving Dataset (IDD)** into a massive, centralized `merged_road_dataset`.
+Real-world driving environments have enormous variance—ranging from completely unlined rural roads to brightly structured highways. To ensure the artificial network generalizes rather than memorizes, we actively compiled **NuScenes, and the India Driving Dataset (IDD)** into a massive, centralized `merged_road_dataset`.
 
 To operate within our aggressive latency constraints while matching heavy parameter requirements, the network infrastructure utilizes a purely hand-engineered **EfficientNet-B2** scaling encoder paired forcefully with a **DeepLabV3+** Spatial Pyramid Pooling decoder algorithm to capture both microscopic edge boundaries and macroscopic structural context.
 
