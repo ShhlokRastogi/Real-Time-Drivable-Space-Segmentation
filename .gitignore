@@ -1,0 +1,22 @@
+# Python Execution Output
+__pycache__/
+*.pyc
+
+# Massive Raw Multi-Dataset Assets 
+dataset_id10k_nuscenes/
+exported_data_idd20k/
+merged_road_dataset/
+
+# Network Model Checkpoints
+*.pth
+
+# Heavy Image Render Artifacts
+inference_results/
+inference_training_results/
+inference_effnet_test*/
+training_graphs/
+
+# System Configs
+.vscode/
+.idea/
+.DS_Store
