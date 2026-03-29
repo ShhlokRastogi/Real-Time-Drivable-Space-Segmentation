@@ -36,3 +36,33 @@ The stabilized system weights (`drivable_model_effnet_merged.pth`) were extracte
 | **Execution Speeds** | **`~77.98 FPS`** | `>= 60.0 FPS` | ⚡ Real-Time Inference Success |
 
 Visual artifact matrices and diagnostic dashcam streams for these 1,000+ unseen boundaries run by the AI brain were exclusively dumped into the native `/inference_effnet_test_results/` system directory.
+
+---
+
+## 🛠️ Installation & Community Usage
+
+We have exposed our >60 FPS optimized architectural weights specifically for generalized community testing! 
+You do **not** need the heavy `merged_road_dataset` to evaluate the structure.
+
+### 1. Clone & Install Dependencies
+First, clone the secure repository and install the tracked pip ecosystem:
+```bash
+git clone https://github.com/ShhlokRastogi/Real-Time-Drivable-Space-Segmentation.git
+cd Real-Time-Drivable-Space-Segmentation
+pip install -r requirements.txt
+```
+
+### 2. Plug-and-Play Inference
+We have engineered two highly-parallel CPU/GPU fallback pipelines specifically designed to operate natively on your customized hardware inputs:
+
+#### Option A: Real-Time Dashcam Video
+Evaluates the core model dynamically across moving dashcam videos, directly dumping the visual 2D segmentation limits accurately onto a new MP4 geometry stream.
+```bash
+python inference_video.py --video "my_dashcam.mp4"
+```
+
+#### Option B: Image Sweeper Array
+Recursively sweeps through entire raw folders capturing completely isolated photo grids and saving them dynamically back utilizing our best metrics bounds.
+```bash
+python inference_images.py --folder "./my_random_images"
+```
