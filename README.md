@@ -20,7 +20,7 @@ The network optimization relies entirely on an isolated `MultiClassDiceFocalLoss
 
 Below is the graph visualization mapping out the model's combinatorial loss trajectory and evaluation limits natively during the execution cycle:
 
-![Training Metrics](/c:/drivableseg/training_graphs/effnet_merged_training_metrics_graph.png)
+![Training Metrics](training_graphs/effnet_merged_training_metrics_graph.png)
 
 ---
 

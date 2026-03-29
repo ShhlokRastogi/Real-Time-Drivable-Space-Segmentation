@@ -15,7 +15,6 @@ merged_road_dataset/
 inference_results/
 inference_training_results/
 inference_effnet_test*/
-training_graphs/
 
 # System Configs
 .vscode/
