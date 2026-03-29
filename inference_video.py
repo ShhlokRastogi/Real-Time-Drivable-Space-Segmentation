@@ -99,7 +99,7 @@ def infer_video(vid_path, model, device, out_dir):
 
 def main():
     parser = argparse.ArgumentParser(description="Public Dashcam Video CPU/GPU Inference.")
-    parser.add_argument("--model", type=str, default="drivable_model_effnet_merged.pth", help="Path to your downloaded .pth weights.")
+    parser.add_argument("--model", type=str, default="drivable_model_effnet_merged_epoch11.pth", help="Path to your downloaded .pth weights.")
     parser.add_argument("--video", type=str, required=True, help="Path to your raw MP4/AVI dashcam stream.")
     parser.add_argument("--output", type=str, default="./video_output", help="Directory for the rendered MP4 output.")
     args = parser.parse_args()

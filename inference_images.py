@@ -92,7 +92,7 @@ def infer_folder(folder_path, model, device, out_dir):
 
 def main():
     parser = argparse.ArgumentParser(description="Public Image Folder Batch Inference Engine.")
-    parser.add_argument("--model", type=str, default="drivable_model_effnet_merged.pth", help="Path to your downloaded .pth weights.")
+    parser.add_argument("--model", type=str, default="drivable_model_effnet_merged_epoch11.pth", help="Path to your downloaded .pth weights.")
     parser.add_argument("--folder", type=str, required=True, help="Path pointing to a standard folder of raw images.")
     parser.add_argument("--output", type=str, default="./folder_output", help="Directory where the overlays are compiled.")
     args = parser.parse_args()
