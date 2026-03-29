@@ -28,12 +28,12 @@ Below is the graph visualization mapping out the model's combinatorial loss traj
 
 The stabilized system weights (`drivable_model_effnet_merged.pth`) were extracted and benchmarked algorithmically strictly against `1,052` entirely unseen, un-augmented graphical frames living randomly in the isolated `test/` boundaries of the merged road hub.
 
-| Physical Metric | Recorded Result | System Target | Project Status |
+| Physical Metric | Recorded Result | 
 | :--- | :--- | :--- | :--- |
-| **Hardware Used** | PyTorch CUDA Tensor Cores | *N/A* | ✅ Active |
-| **Total Test Split Loss** | `0.0559` | *Minimized* | 📉 Converged |
-| **Generalized mIoU** | **`90.17%`** | `>= 85.00%` | 🏆 Surpassed Target Bounds |
-| **Execution Speeds** | **`~77.98 FPS`** | `>= 60.0 FPS` | ⚡ Real-Time Inference Success |
+| **Hardware Used** | PyTorch CUDA Tensor Cores | 
+| **Total Test Split Loss** | `0.0559` | 
+| **Generalized mIoU** | **`90.17%`** | 
+| **Execution Speeds** | **`~77.98 FPS`** | 
 
 Visual artifact matrices and diagnostic dashcam streams for these 1,000+ unseen boundaries run by the AI brain were exclusively dumped into the native `/inference_effnet_test_results/` system directory.
 
