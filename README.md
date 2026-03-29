@@ -2,7 +2,7 @@
 
 ## Problem Statement
 
-The objective of this project is to build a mathematically rigorous and highly accurate (targeting `>85% mIoU`) computer vision pipeline capable of detecting general drivable boundaries strictly within a **real-time execution window** (`>60 FPS`) on local consumer hardware.
+The objective of this project is to build a mathematically rigorous and highly accurate (targeting `90% mIoU`) computer vision pipeline capable of detecting general drivable boundaries strictly within a **real-time execution window** (`77 FPS`) on local consumer hardware.
 
 Real-world driving environments have enormous variance—ranging from completely unlined rural roads to brightly structured highways. To ensure the artificial network generalizes rather than memorizes, we actively compiled **NuScenes, and the India Driving Dataset (IDD)** into a massive, centralized `merged_road_dataset`.
 
