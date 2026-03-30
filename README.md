@@ -7,7 +7,6 @@
   <img src="https://img.shields.io/badge/PyTorch-DeepLearning-red?style=for-the-badge&logo=pytorch" />
   <img src="https://img.shields.io/badge/Speed-~78FPS-brightgreen?style=for-the-badge" />
   <img src="https://img.shields.io/badge/mIoU-90.17%25-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Task-Semantic%20Segmentation-orange?style=for-the-badge" />
 </p>
 
 ---
