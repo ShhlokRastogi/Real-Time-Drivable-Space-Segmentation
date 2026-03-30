@@ -1,68 +1,130 @@
 # 🚗 Real-Time Drivable Space Segmentation
 
-## Problem Statement
-
-The objective of this project is to build a mathematically rigorous and highly accurate (targeting `90% mIoU`) computer vision pipeline capable of detecting general drivable boundaries strictly within a **real-time execution window** (`77 FPS`) on local consumer hardware.
-
-Real-world driving environments have enormous variance—ranging from completely unlined rural roads to brightly structured highways. To ensure the artificial network generalizes rather than memorizes, we actively compiled **NuScenes, and the India Driving Dataset (IDD)** into a massive, centralized `merged_road_dataset`.
-
-To operate within our aggressive latency constraints while matching heavy parameter requirements, the network infrastructure utilizes a purely hand-engineered **EfficientNet-B2** scaling encoder paired forcefully with a **DeepLabV3+** Spatial Pyramid Pooling decoder algorithm to capture both microscopic edge boundaries and macroscopic structural context.
-
----
-
-## Dataset & Training Strategy (Merged Road Context)
-
-The compilation of the **Merged Road Dataset** relies heavily on aggressively isolating the data into strict Train, Validation, and unseen Test subsets purely to defeat data leakage. During the actual epoch loop (`train_effnet_merged.py`), the `MergedRoadDataset` torch loader intrinsically binds severe matrix augmentations (`torchvision.transforms.functional.affine`) across spatial planes to systematically stress the geometry learning cap.
-
-The network optimization relies entirely on an isolated `MultiClassDiceFocalLoss` engine designed deliberately to mathematically crush precision failures on harsh categorical boundary imbalances.
-
-### Network Progression Mapping
-
-Below is the graph visualization mapping out the model's combinatorial loss trajectory and evaluation limits natively during the execution cycle:
-
-![Training Metrics](training_graphs/effnet_merged_training_metrics_graph.png)
+<p align="center">
+  <img src="https://img.shields.io/github/stars/ShhlokRastogi/Real-Time-Drivable-Space-Segmentation?style=for-the-badge" />
+  <img src="https://img.shields.io/github/forks/ShhlokRastogi/Real-Time-Drivable-Space-Segmentation?style=for-the-badge" />
+  <img src="https://img.shields.io/github/license/ShhlokRastogi/Real-Time-Drivable-Space-Segmentation?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/PyTorch-DeepLearning-red?style=for-the-badge&logo=pytorch" />
+  <img src="https://img.shields.io/badge/Speed-77FPS-brightgreen?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/mIoU-90.17%25-blue?style=for-the-badge" />
+</p>
 
 ---
 
-## Final Mathematical Evaluation (Test Split)
+## 🔥 TL;DR (For Recruiters)
+**Real-time semantic segmentation system achieving 90.17% mIoU at ~78 FPS using EfficientNet-B2 + DeepLabV3+ on a merged multi-domain driving dataset (NuScenes + IDD).**
 
-The stabilized system weights (`drivable_model_effnet_merged.pth`) were extracted and benchmarked algorithmically strictly against `1,052` entirely unseen, un-augmented graphical frames living randomly in the isolated `test/` boundaries of the merged road hub.
-
-| Physical Metric | Recorded Result | 
-| :--- | :--- |
-| **Hardware Used** | PyTorch CUDA Tensor Cores | 
-| **Total Test Split Loss** | `0.0559` | 
-| **Generalized mIoU** | **`90.17%`** | 
-| **Execution Speeds** | **`~77.98 FPS`** | 
-
-Visual artifact matrices and diagnostic dashcam streams for these 1,000+ unseen boundaries run by the AI brain were exclusively dumped into the native `/inference_effnet_test_results/` system directory.
+- 🚀 Production-oriented (real-time constraint)
+- 🧠 Strong generalization across road types
+- ⚡ Optimized for consumer GPUs
+- 📦 Plug-and-play inference
 
 ---
 
-## 🛠️ Installation & Community Usage
+## 📌 Project Overview
+This project builds a **real-time drivable space segmentation system** capable of handling:
+- Unstructured rural roads
+- Urban traffic environments
+- Highways with lane markings
 
-We have exposed our >60 FPS optimized architectural weights specifically for generalized community testing! 
-You do **not** need the heavy `merged_road_dataset` to evaluate the structure.
+Unlike standard models, this system prioritizes **latency + accuracy together**, making it suitable for **autonomous driving pipelines and edge deployment**.
 
-### 1. Clone & Install Dependencies
-First, clone the secure repository and install the tracked pip ecosystem:
+---
+
+## 🧠 Model Architecture
+
+| Component | Design Choice |
+|----------|-------------|
+| Encoder | EfficientNet-B2 |
+| Decoder | DeepLabV3+ (ASPP) |
+| Loss | Dice + Focal Loss |
+| Framework | PyTorch |
+
+### Why this works:
+- EfficientNet → lightweight + strong features  
+- DeepLabV3+ → multi-scale spatial understanding  
+- Dice + Focal → handles class imbalance + improves boundaries  
+
+---
+
+## 📊 Dataset Strategy
+
+### Merged Road Dataset
+- NuScenes
+- India Driving Dataset (IDD)
+
+### Key Engineering Decisions:
+- Strict Train / Val / Test split (no leakage)
+- Heavy geometric augmentations
+- Cross-domain learning (India + global roads)
+
+➡️ Result: Model learns **road semantics, not dataset bias**
+
+---
+
+## ⚙️ Setup
+
 ```bash
 git clone https://github.com/ShhlokRastogi/Real-Time-Drivable-Space-Segmentation.git
 cd Real-Time-Drivable-Space-Segmentation
 pip install -r requirements.txt
 ```
 
-### 2. Plug-and-Play Inference
-We have engineered two highly-parallel CPU/GPU fallback pipelines specifically designed to operate natively on your customized hardware inputs:
+---
 
-#### Option A: Real-Time Dashcam Video
-Evaluates the core model dynamically across moving dashcam videos, directly dumping the visual 2D segmentation limits accurately onto a new MP4 geometry stream.
+## ▶️ Run Inference
+
+### 🎥 Video
 ```bash
-python inference_video.py --video "my_dashcam.mp4"
+python inference_video.py --video "input.mp4"
 ```
 
-#### Option B: Image Sweeper Array
-Recursively sweeps through entire raw folders capturing completely isolated photo grids and saving them dynamically back utilizing our best metrics bounds.
+### 🖼️ Images
 ```bash
-python inference_images.py --folder "./my_random_images"
+python inference_images.py --folder "./images"
 ```
+
+---
+
+## 📈 Results
+
+| Metric | Value |
+|------|------|
+| mIoU | **90.17%** |
+| FPS | **~77.98 FPS** |
+| Test Loss | `0.0559` |
+| Test Samples | 1,052 |
+
+---
+
+## 🎯 Why This Project Stands Out
+
+- ⚡ **Real-time + high accuracy (rare combination)**
+- 🌍 **Generalizes across countries (IDD + NuScenes)**
+- 🧪 **Proper ML pipeline (no leakage, strong validation)**
+- 🛠️ **Custom loss engineering**
+- 📦 **Ready-to-use inference system**
+
+---
+
+## 📁 Outputs
+```
+/inference_effnet_test_results/
+```
+
+---
+
+## 📦 Model Weights
+```
+drivable_model_effnet_merged.pth
+```
+
+---
+
+## 🤝 Contributions
+Contributions, issues, and feature requests are welcome!
+
+---
+
+## ⭐ If you like this project
+Give it a ⭐ on GitHub — it helps visibility!
