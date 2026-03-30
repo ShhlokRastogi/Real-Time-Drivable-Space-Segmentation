@@ -24,9 +24,14 @@ It is optimized for **both speed and accuracy**, achieving on unseen test data:
 - ⚡ ~78 FPS  
 - 🎯 90.17% mIoU
   
-Trained data: 
-- 🎯 91% mIoU
- 
+Validation data: 
+- 🎯 92% mIoU
+
+Training data: 
+- 🎯 91.7% mIoU
+
+<img width="1200" height="500" alt="image" src="https://github.com/user-attachments/assets/a4090b95-3ce5-433f-bd6d-0ebb79baa3dc" />
+
 ---
 
 ## 🧠 Model Architecture
