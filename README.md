@@ -95,6 +95,8 @@ python inference_images.py --folder "./images"
 | Test Loss | `0.0559` |
 | Test Samples | 1,052 |
 
+<img width="1113" height="488" alt="image" src="https://github.com/user-attachments/assets/82534aa0-07b0-4304-aeca-113b1a0d4645" />
+
 ---
 
 ## 🎯 Why This Project Stands Out
@@ -116,7 +118,7 @@ python inference_images.py --folder "./images"
 
 ## 📦 Model Weights
 ```
-drivable_model_effnet_merged.pth
+drivable_model_effnet_merged_epoch11.pth
 ```
 
 ---
