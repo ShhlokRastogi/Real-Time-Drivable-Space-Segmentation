@@ -6,7 +6,7 @@ import numpy as np
 
 class MergedRoadDataset(Dataset):
     """
-    Direct PyTorch loader for the Merged Road Dataset with STRICTLY NO AUGMENTATIONS.
+    Direct PyTorch loader for the Merged Road Dataset.
     Reads Native 640x360 images and binary masks [0, 1] securely from the drive.
     """
     def __init__(self, data_split_dir='c:/drivableseg/merged_road_dataset/train'):
